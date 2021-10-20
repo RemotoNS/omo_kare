@@ -26,6 +26,7 @@ height: 500px;
 
 <body>
 <a class="btn btn-primary" href="/main" role="button">Link</a>
+<a class="btn btn-primary" href="/destroy_ok/{{ $id }}" role="button">削除</a>
 
 <p><?= $name ?></p>
 <p><?= $text ?></p>

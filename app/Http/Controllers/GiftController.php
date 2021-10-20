@@ -13,35 +13,25 @@ use App\Models\Character;
 class GiftController extends Controller
 {
     
-
-    public function __construct()
-    {
-        $this->middleware('auth')->except(['index',"store","show"]);
+    public function __construct(){
+        $this->middleware('auth')->except(['index',"store","show_sub"]);
     }
 
-
     public function index(){
-
         $gifts = Gift::all();
         return view("index" , compact("gifts"));
     }
 
-    public function main(){
-
-        $gifts = Gift::all();
-        return view("main" , compact("gifts"));
-    }
-
-
     public function store(Request $request){
 
         if(isset($request["img"])){
-        $img = $request->img;
-        $filename = $request->img->getClientOriginalName();
-        $img = $request->file("img")->storeAs('',$filename,'public');
+            $img = $request->img;
+            $filename = $request->img->getClientOriginalName();
+            $img = $request->file("img")->storeAs('',$filename,'public');
         }else{
-        $img = "bouquet_omedetou.png";
+            $img = "bouquet_omedetou.png";
         }
+
         $gift = new Gift;
         $gift -> name = $request -> name;
         $gift -> text = $request -> text;
@@ -50,8 +40,6 @@ class GiftController extends Controller
 
         return redirect("/index"); 
     }
-
-   
 
     public function show_sub($id){
 
@@ -70,12 +58,35 @@ class GiftController extends Controller
     public function show($id){
 
         $gift = Gift::find($id);
+        $id = $gift -> id; 
         $name = $gift -> name; 
         $text = $gift -> text;
         $img = $gift -> img;
 
-        return view("show" , compact('name', 'text',"img"));
+        return view("show" , compact("id",'name', 'text',"img"));
     }
+
+    public function main(){
+
+        $gifts = Gift::all();
+        return view("main" , compact("gifts"));
+    }
+
+    public function destroy_ok($id){
+
+        $gift = Gift::find($id);
+        $id = $gift -> id; 
+
+        return view("destroy" , compact("id"));
+    }
+
+    public function destroy($id){
+
+        $gift = Gift::find($id);
+        $gift -> delete();
+        return redirect("/main"); 
+    }
+
 
     //キャラ作りのためのメソッド
     public function store_chara(Request $request){

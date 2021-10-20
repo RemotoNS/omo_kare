@@ -32,6 +32,9 @@ Route::get('/index', "App\Http\Controllers\GiftController@index") ;
 // コウヘイ専用ページ
 Route::get('/main', "App\Http\Controllers\GiftController@main") ;
 Route::get('/show/{id}', "App\Http\Controllers\GiftController@show") ;
+Route::get('/destroy_ok/{id}', "App\Http\Controllers\GiftController@destroy_ok") ;
+Route::get('/destroy/{id}', "App\Http\Controllers\GiftController@destroy") ;
+
 
 // ログインページ
 Auth::routes();
