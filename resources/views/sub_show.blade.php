@@ -25,17 +25,15 @@ height: 500px;
 </head>
 
 <body>
-<a class="btn btn-primary" href="/main" role="button">Link</a>
+<a class="btn btn-primary" href="/index" role="button">Link</a>
 
 <p><?= $name ?></p>
 <p><?= $text ?></p>
 <div class="container">
-    <img src=" {{ asset('storage/'.$img) }}" class="example1">
+<img src=" {{ asset('storage/'.$img) }}" class="example1">
 </div>
 
-<div class="container">
-    <img src=" {{ asset('storage/'.$img) }}" class="example2">
-</div>
+
 
 
 

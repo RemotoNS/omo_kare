@@ -23,17 +23,23 @@ Route::get('/new', function () {
 
 Route::post('/store', "App\Http\Controllers\GiftController@store") ;
 
-Route::get('/show/{id}', "App\Http\Controllers\GiftController@show") ;
+
+Route::get('/show_sub/{id}', "App\Http\Controllers\GiftController@show_sub") ;
 
 Route::get('/index', "App\Http\Controllers\GiftController@index") ;
 
 
-//練習
-
+// コウヘイ専用ページ
 Route::get('/main', "App\Http\Controllers\GiftController@main") ;
+Route::get('/show/{id}', "App\Http\Controllers\GiftController@show") ;
 
-//
-
+// ログインページ
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// キャラ作りのためのメソッド
+Route::get('/chara', function () {
+    return view('characters');
+});
+Route::post('/store_chara', "App\Http\Controllers\GiftController@store_chara") ;

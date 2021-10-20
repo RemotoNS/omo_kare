@@ -19,7 +19,7 @@
       @foreach ($gifts as $gift)
         <tr>
           <td>
-            <a href="/show/{{  $gift->id }}">{{ $gift->id }}
+            <a href="/show_sub/{{  $gift->id }}">{{ $gift->id }}
             </a>
           </td>
           <td>{{ $gift->name }}</td>
@@ -36,5 +36,5 @@
 
 <a class="btn btn-primary" href="/new" role="button">コウヘイに想いを届けたい</a>
 
-<a class="btn btn-primary" href="#" role="button">コウヘイの部屋</a>
+<a class="btn btn-primary" href="/main" role="button">コウヘイの部屋</a>
 @endsection
