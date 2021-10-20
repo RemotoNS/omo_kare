@@ -25,6 +25,7 @@ height: 500px;
 </head>
 
 <body>
+<a class="btn btn-primary" href="/index" role="button">Link</a>
 
 <p><?= $name ?></p>
 <p><?= $text ?></p>
@@ -35,5 +36,7 @@ height: 500px;
 <div class="container">
     <img src=" {{ asset('storage/'.$img) }}" class="example2">
 </div>
+
+
 
 </body>

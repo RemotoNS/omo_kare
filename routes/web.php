@@ -21,20 +21,18 @@ Route::get('/new', function () {
     return view('new');
 });
 
-//Route::post('/store', "App\Http\Controllers\GiftController@store") ;
-
-
-//練習
-Route::get('/img', function () {
-    return view('img');
-});
-
 Route::post('/store', "App\Http\Controllers\GiftController@store") ;
+
+Route::get('/show/{id}', "App\Http\Controllers\GiftController@show") ;
+
+Route::get('/index', "App\Http\Controllers\GiftController@index") ;
+
+
 //練習
 
+Route::get('/main', "App\Http\Controllers\GiftController@main") ;
 
-Route::get('/show', "App\Http\Controllers\GiftController@show") ;
-
+//
 
 Auth::routes();
 

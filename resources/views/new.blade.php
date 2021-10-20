@@ -27,6 +27,6 @@
 
   </form>
 
-  <a class="btn btn-primary" href="#" role="button">戻る</a>
+  <a class="btn btn-primary" href="/index" role="button">戻る</a>
 
 @endsection

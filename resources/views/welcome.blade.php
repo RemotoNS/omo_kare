@@ -16,6 +16,6 @@
 <p>本Webアプリは、【カレの結婚をお祝いするメッセージを届けるため専用】に作られた、
     <br>ささやかなプレゼントである。
 </p>
-<a class="btn btn-primary" href="#" role="button">Link</a>
+<a class="btn btn-primary" href="/index" role="button">Link</a>
 
 </body>
