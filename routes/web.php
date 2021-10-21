@@ -16,16 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/new', function () {
     return view('new');
 });
-
 Route::post('/store', "App\Http\Controllers\GiftController@store") ;
-
-
 Route::get('/show_sub/{id}', "App\Http\Controllers\GiftController@show_sub") ;
-
 Route::get('/index', "App\Http\Controllers\GiftController@index") ;
 
 
@@ -35,11 +30,9 @@ Route::get('/show/{id}', "App\Http\Controllers\GiftController@show") ;
 Route::get('/destroy_ok/{id}', "App\Http\Controllers\GiftController@destroy_ok") ;
 Route::get('/destroy/{id}', "App\Http\Controllers\GiftController@destroy") ;
 
-
 // ログインページ
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 // キャラ作りのためのメソッド
 Route::get('/chara', function () {

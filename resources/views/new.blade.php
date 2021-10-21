@@ -1,4 +1,4 @@
-@extends("layouts.foot")
+@extends("layouts.full_app")
 
 @section("title","新規投稿")
 
@@ -10,15 +10,14 @@
 
     <div class="form-group">
       <label for="exampleFormControlInput1">名前</label>
-      <input type="name" name="name" class="form-control" id="exampleFormControlInput1" required>
+      <input type="name" name="name" class="form-control" id="exampleFormControlInput1"required>
     </div>
 
     <div class="form-group">
       <label for="exampleFormControlTextarea1">メッセージを投稿する</label>
-      <textarea class="form-control" type="text" name="text" rows="3" placeholder="心温まるメッセージの投稿をお願いします" required></textarea>
-
-
-      
+      <textarea class="form-control" type="text" name="text" rows="3" 
+        placeholder="心温まるメッセージの投稿をお願いします" required>
+      </textarea>
     </div>
 
     <div class="form-group">
@@ -30,6 +29,6 @@
 
   </form>
 
-  <a class="btn btn-primary" href="/index" role="button">戻る</a>
+  <a class="btn btn-primary" href="/index" role="button">メッセージ集に戻る</a>
 
 @endsection
