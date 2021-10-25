@@ -47,7 +47,7 @@ Route::get('/chara', function () {
 Route::post('/store_chara', "App\Http\Controllers\GiftController@store_chara") ;
 
 // スター作りのためのメソッド
-Route::get('/star', function () {
-    return view('star');
+Route::get('/aicon', function () {
+    return view('aicon');
 });
-Route::post('/store_star', "App\Http\Controllers\GiftController@store_star") ;
+Route::post('/store_aicon', "App\Http\Controllers\GiftController@store_aicon") ;

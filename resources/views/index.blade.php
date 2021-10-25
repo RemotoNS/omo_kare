@@ -5,18 +5,14 @@
 @section("content")
 
     <h1>コウヘイへのメッセージ</h1>
-
-    <div class="table-responsive">
-
+    <h3>ここは{ $aicon -> name }です。 </h3>
+    <h2>一つ一つの星に触れてみてください。心温まるメッセージを観ることができます</h2>
+ 
       @foreach ($gifts as $gift)
-      <>
-          <h2>
-          <a href="/show_sub/{{  $gift->id }}">{{ $gift->name }}からの<br>メッセージ</a>
-          </h2>
+        <a href="/show_sub/{{ $gift->id }}"><img src=" {{ asset('storage/'.$star) }}">
+        </a><br>
       @endforeach
-
-    </div>
-
+    
     <a class="btn btn-primary" href="/new" role="button">彼に想いを届けたい</a>
 
     <a class="btn btn-primary" href="/main" role="button">VIPルーム</a>

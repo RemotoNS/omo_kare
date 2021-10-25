@@ -10,7 +10,7 @@ use App\Models\Gift;
 
 use App\Models\Character;
 
-use App\Models\Star;
+use App\Models\Aicon;
 
 class GiftController extends Controller
 {
@@ -21,7 +21,13 @@ class GiftController extends Controller
 
     public function index(){
         $gifts = Gift::all();
-        return view("index" , compact("gifts"));
+
+        $num = rand(1,8);
+        $aicon = Aicon::find($num);        
+        $star = $aicon -> star;
+        $name = $aicon -> name;
+
+        return view("index" , compact("gifts","star","name"));
     }
     
 
@@ -109,17 +115,17 @@ class GiftController extends Controller
     }
 
     //スター作りのためのメソッド
-    public function store_star(Request $request){
+    public function store_aicon(Request $request){
 
-        $star = $request->img;
-        $filename = $request->img->getClientOriginalName();
-        $star = $request->file("img")->storeAs('',$filename,'public');
+        $star = $request->aicon;
+        $filename = $request->aicon->getClientOriginalName();
+        $star = $request->file("aicon")->storeAs('',$filename,'public');
 
-        $star = new Star;
-        $star -> img = $star;
-        $star -> save();
+        $aicon = new Aicon;
+        $aicon -> star = $star;
+        $aicon -> save();
 
-        return redirect("/star"); 
+        return redirect("/aicon"); 
     }
 
 
