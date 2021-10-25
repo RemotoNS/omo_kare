@@ -18,6 +18,11 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
+        <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/5-8.css">
+
     </head>
     <body>
         <div id="app">
@@ -83,11 +88,15 @@
                     </div>
                 </div>
             </nav>
-
+        </div>
+        <div id="particles-js"></div>
+        <div id="wrapper">
             <main class="py-4">
-                @yield('content')
+                    @yield('content')
             </main>
         </div>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/js/5-8.js"></script>
     </body>
     <footer>
         <p>本アプリは、個人情報に配慮し、開示情報を制限しております。

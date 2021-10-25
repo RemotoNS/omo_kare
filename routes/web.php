@@ -23,6 +23,12 @@ Route::post('/store', "App\Http\Controllers\GiftController@store") ;
 Route::get('/show_sub/{id}', "App\Http\Controllers\GiftController@show_sub") ;
 Route::get('/index', "App\Http\Controllers\GiftController@index") ;
 
+//test
+Route::get('/testJs', "App\Http\Controllers\GiftController@testJs") ;
+
+
+
+
 
 // コウヘイ専用ページ
 Route::get('/main', "App\Http\Controllers\GiftController@main") ;
@@ -39,3 +45,9 @@ Route::get('/chara', function () {
     return view('characters');
 });
 Route::post('/store_chara', "App\Http\Controllers\GiftController@store_chara") ;
+
+// スター作りのためのメソッド
+Route::get('/star', function () {
+    return view('star');
+});
+Route::post('/store_star', "App\Http\Controllers\GiftController@store_star") ;

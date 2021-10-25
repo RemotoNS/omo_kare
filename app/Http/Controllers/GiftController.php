@@ -10,6 +10,8 @@ use App\Models\Gift;
 
 use App\Models\Character;
 
+use App\Models\Star;
+
 class GiftController extends Controller
 {
     
@@ -21,6 +23,10 @@ class GiftController extends Controller
         $gifts = Gift::all();
         return view("index" , compact("gifts"));
     }
+    
+
+
+
 
     public function store(Request $request){
 
@@ -102,6 +108,19 @@ class GiftController extends Controller
         return redirect("/chara"); 
     }
 
+    //スター作りのためのメソッド
+    public function store_star(Request $request){
+
+        $star = $request->img;
+        $filename = $request->img->getClientOriginalName();
+        $star = $request->file("img")->storeAs('',$filename,'public');
+
+        $star = new Star;
+        $star -> img = $star;
+        $star -> save();
+
+        return redirect("/star"); 
+    }
 
 
 }

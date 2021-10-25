@@ -26,7 +26,7 @@
 
   @foreach ($gifts as $gift)
     <h2>
-      <a href="/show_sub/{{  $gift->id }}">{{ $gift->name }}からのメッセージ</a>
+      <a href="/show/{{  $gift->id }}">{{ $gift->name }}からのメッセージ</a>
     </h2>
   @endforeach
 
