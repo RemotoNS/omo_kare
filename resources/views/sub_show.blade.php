@@ -4,25 +4,35 @@
 
 <style type="text/css">
     img.example1 {
-    width: 200px;
-    height: 200px;
-    }
-
-    img.example2 {
-    width: 50%;
-    height: 500px;
+    width: 300px;
+    height: 300px;
+    margin:auto;
     }
 </style>
 
 @section("content")
 
-    <a class="btn btn-primary" href="/index" role="button">メッセージ集へ戻る</a>
-
-    <p><?= $name ?></p>
-    <p><?= $text ?></p>
-    <div class="container">
-        <img src=" {{ asset('storage/'.$img) }}" class="example1">
+    <div class="col-xs-12 col-lg-12 mt-5">
+        <p class="indexTital glowAnime text-center">名前；<?= $name ?></p>
     </div>
+    <img src=" {{ asset('storage/'.$img) }}" class="example1" >
+    <div class="col-xs-12 col-lg-12 mt-5">
+        <p class="indexTital glowAnime text-center"><?= $text ?></p>
+    </div>
+
+    <div class="container">
+    </div>
+
+    <div class="col-xs-12 col-lg-12 mt-5">
+        <h3 class = "text-center">
+            <a href="/index" class="gradient2">メッセージ集へ戻る</a>
+        </h3>
+    </div>
+
+
+
+
+
     
 @endsection
 

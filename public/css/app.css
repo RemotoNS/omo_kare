@@ -42,6 +42,184 @@
   box-sizing: border-box;
 }
 
+/*==ボタン　https://coco-factory.jp/ugokuweb/move02/8-10/　開始 */
+
+.TextTyping {
+  text-align: center;
+}
+
+
+.TextTyping span {
+  display: none;
+}
+
+/*文字列後ろの線の設定*/
+.TextTyping::after {
+  content: "|";
+  animation: typinganime .8s ease infinite;
+}
+
+@keyframes typinganime{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/*==ボタン　https://coco-factory.jp/ugokuweb/move02/8-10/　終了 */
+
+
+/*==ボタン　https://coco-factory.jp/ugokuweb/move02/8-17/　開始 */
+
+.indexTital{
+  text-align: center;
+  margin: 20px 0;
+  font-size:75px;
+  color: rgb(0, 0, 0);
+}
+
+
+
+.glowAnime span{opacity: 0;}
+
+/*アニメーションで透過を0から1に変化させtext-shadowをつける*/
+.glowAnime.glow span{ animation:glow_anime_on 1s ease-out forwards; }
+
+@keyframes glow_anime_on{
+  0% { opacity:0; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+  50% { opacity:1;text-shadow: 0 0 10px #fff,0 0 15px #fff; }
+  100% { opacity:1; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+}
+
+
+/*==ボタン　https://coco-factory.jp/ugokuweb/move02/8-17/　終了 */
+
+
+/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-30/　開始 */
+
+
+.gradient2 {
+  /*ボタンの形状*/
+  display: inline-block;
+  color: #fff;
+  
+  padding: 18px 60px;
+  border-radius:30px;
+  text-decoration: none;
+  outline: none;
+  /*背景の色と形状*/
+  background: linear-gradient(to right, #52A0FD 0%, #00e2fa 80%, #00e2fa 100%);
+  box-shadow: 0 15px 15px rgba(82,160,253,0.4);
+  /*アニメーションの指定*/ 
+  transition: all 0.3s ease-out;
+}
+
+/*hoverした際のスケールで全体を縮小*/
+.gradient2:hover{
+  transform: scale(0.95);
+}
+
+/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-30/　終了 */
+
+
+/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-41/　開始 */
+
+
+/*丸がボタンに変形する*/
+
+.btntransform{
+  /*丸の基点とするためrelativeを指定*/
+position: relative;
+  /*ボタンの形状*/  
+  display: inline-block;
+padding:0 0 0 15px;
+line-height: 50px;
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
+/* 丸が動く */
+.btntransform::before{
+content:'';
+  /*絶対配置で丸の位置を決める*/
+position:absolute;
+left:0;
+z-index: -1;
+  /*丸の形状*/
+width:50px;
+height:50px;
+background:rgb(107, 240, 222);
+border-radius:25px;
+  /*アニメーションの指定*/
+  transition:.3s ease-out;
+}
+
+/*hoverした際の形状*/
+.btntransform:hover::before{
+width:270px;
+}
+
+/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-41/　終了 */
+
+
+/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-29/　開始 */
+
+.gradient1{
+  /*ボタンの形状*/
+  display: inline-block;
+  color:#fff;
+  padding: 18px 60px;
+  
+  border-radius:30px;
+  text-decoration: none;
+  outline: none;
+  /*背景の色と形状*/
+  background: linear-gradient(270deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
+  background-position: 1% 50%;
+  background-size: 200% auto;
+  /*アニメーションの指定*/
+  transition: all 0.3s ease-out;
+}
+
+/*hoverした際の、背景の場所とテキスト色の変更*/
+.gradient1:hover {
+  color: #fff;
+  background-position: 99% 50%;
+}
+
+/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-29/　終了 */
+
+
+/*==　ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-32/  開始ライン */
+
+.gradient4{
+  /*ボタンの形状*/
+  display: inline-block;
+  padding: 18px 60px;  
+  border-radius:30px;
+  text-decoration: none;
+  border:1px solid #fa6c9f;
+  color: #fa6c9f;
+  outline: none;
+  /*アニメーションの指定*/ 
+  transition: all 0.4s ease-out;
+}
+
+/*hoverした際、グラデーションと影を付ける*/
+.gradient4:hover{
+  /*ボタンの形状*/
+  border-color:transparent;
+  color: #fff;
+  /*背景の色と形状*/
+  background: linear-gradient(270deg, #fa6c9f 0%, #ffe140 50%, #ff357f 100%);
+  background-size: 200% auto;
+  background-position: right center;
+  /*ボックスの影*/   
+  box-shadow: 0 5px 10px rgb(250,108,159,0.4);
+}
+
+/*==　ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-32/  終了ライン */
+
+
 /*!
  * 2021.10.25 効果背景をつけるための追加（開始）
  */
