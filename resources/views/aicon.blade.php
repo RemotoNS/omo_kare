@@ -1,21 +1,24 @@
-@extends("layouts.foot")
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>5-6 桜が散る</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!--==============レイアウトを制御する独自のCSSを読み込み===============-->
 
-@section("title","新規投稿")
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-@section("content")
-  <h1>新規投稿ページ</h1>
+<link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-6/css/reset.css">
+<link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-6/css/5-6.css">
+</head>
+<body>
+<div id="particles-js"></div>
+<div id="wrapper">
+  <p>コンテンツが入ります<br>※使用したライブラリ<a href="https://vincentgarreau.com/particles.js/" target="_blank">https://vincentgarreau.com/particles.js/</a></p>
+<!--/wrapper--></div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-6/js/5-6.js"></script>
 
-  <form action="/store_aicon" method="POST" enctype="multipart/form-data">
-  @csrf
-    <div class="form-group">
-      <label for="exampleFormControlFile1">画像を投稿する</label>
-      <input type="file" name="aicon" class="form-control-file" id="exampleFormControlFile1">
-    </div>
-
-    <button type="submit" class="btn btn-primary">投稿する</button>
-
-  </form>
-
-  <a class="btn btn-primary" href="/index" role="button">戻る</a>
-
-@endsection
+</body>
+</html>
+  

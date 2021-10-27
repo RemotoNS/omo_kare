@@ -1,14 +1,23 @@
-@extends("layouts.full_app")
+@extends("layouts.app")
 
 @section("title","新規投稿")
 
 @section("content")
+
+<form method="post" enctype="multipart/form-data">
+@csrf
+  <input type="file" name="avatar">
+  <button type="submit">送信する</button>
+</form>
+
   <div class="col-xs-12 col-lg-12 mt-5">
     <h1 class="indexTital glowAnime text-center">新規投稿ページ</h1>
   </div>
-  <div class="col-xs-12 col-lg-12 mt-5">
     <form action="/store" method="POST" enctype="multipart/form-data">
-    @csrf
+      @csrf
+      <label for="exampleFormControlFile1">画像を投稿する</label>
+          <input type="file" name="img" class="form-control-file">
+       
 
       <div class="form-group">
         <label>名前</label>
@@ -23,13 +32,12 @@
       </div>
 
       <div class="form-group">
-        <label>画像を投稿する</label>
+        <label for="exampleFormControlFile1">画像を投稿する</label>
         <input type="file" name="img" class="form-control-file">
       </div>
 
       <button type="submit" class="btn btn-primary">投稿する</button>
     </form>
-  </div>
 
   <a class="btn btn-primary" href="/index" role="button">メッセージ集に戻る</a>
 

@@ -79,164 +79,6 @@ html,body{
 
 /*========= 幾何学模様背景　終了 ===============*/
 
-
-/*========= くるくる回るテキスト ===============*/
-
-.rollAnime.roll span {
-  transition-property: opacity,transform;
-  transform: rotateY(360deg);
-  transition: all .8s cubic-bezier(.77,0,.175,1);
-  transition-timing-function: cubic-bezier(.77,0,.175,1);
-  display: inline-block;
-}
-
-/*==動画配列　https://coco-factory.jp/ugokuweb/move01/6-2-1/　開始  */
-
-.gallery{
-  columns: 4;/*段組みの数*/
-  padding:15px;/*ギャラリー左右に余白をつける*/
-  }
-  
-  .gallery li {
-      margin-bottom: 20px;/*各画像下に余白をつける*/
-  }
-  
-  /*ギャラリー内のイメージは横幅100%にする*/
-  .gallery img{
-    width:100%;
-    height:auto;
-    vertical-align: bottom;/*画像の下にできる余白を削除*/}
-  
-  /*　横幅900px以下の段組み設定　*/
-  @media only screen and (max-width: 900px) {
-    .gallery{
-    columns:3;
-    } 
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .gallery{
-    columns: 2;
-    } 
-  }
-  
-  
-  /*========= レイアウトのためのCSS ===============*/
-
-  
-  /*画像を出現させるアニメーションCSS*/
-  
-  .flipLeft{
-  animation-name: flipLeft;
-  animation-duration:0.5s;
-  animation-fill-mode:forwards;
-  perspective-origin: left center;
-  opacity: 0;
-  }
-  
-  @keyframes flipLeft{
-    from {
-     transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
-    opacity: 0;
-    }
-  
-    to {
-    transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
-    opacity: 1;
-    }
-  }
-/*==動画配列　https://coco-factory.jp/ugokuweb/move01/6-2-1/　終了  */
-
-
-/*==花びら背景　https://coco-factory.jp/ugokuweb/move02/5-6/　開始  */
-
-
-#wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align:center;
-}
-
-a{
-  color: #333;
-}
-/*========= particle js を描画するエリア設定 ===============*/
-
-html,body{
-  height: 100%;/*高さを100%にして描画エリアをとる*/
-}
-
-#particles-js{ 
-  position:fixed;/*描画固定*/
-  z-index:-1;/*描画を一番下に*/
-  width: 100%;
-  height: 100%;
-  background-color:#FEE7E7;/*背景色*/
-}
-
-#wrapper{
-  position: relative;/*描画を#particles-jsよりも上にするためposition:relative;を指定*/
-  z-index: 1;/*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
-  width:100%;
-  height: 100%;
-}
-
-/*==花びら背景　https://coco-factory.jp/ugokuweb/move02/5-6/　終了  */
-
-
-
-/*==ボタン　https://coco-factory.jp/ugokuweb/move02/8-10/　開始 */
-
-.TextTyping {
-  text-align: center;
-}
-
-
-.TextTyping span {
-  display: none;
-}
-
-/*文字列後ろの線の設定*/
-.TextTyping::after {
-  content: "|";
-  animation: typinganime .8s ease infinite;
-}
-
-@keyframes typinganime{
-  from{opacity:0}
-  to{opacity:1}
-}
-
-/*==ボタン　https://coco-factory.jp/ugokuweb/move02/8-10/　終了 */
-
-
-/*==ボタン　https://coco-factory.jp/ugokuweb/move02/8-17/　開始 */
-
-.indexTital{
-  text-align: center;
-  margin: 20px 0;
-  font-size:75px;
-  color: rgb(0, 0, 0);
-}
-
-
-
-.glowAnime span{opacity: 0;}
-
-/*アニメーションで透過を0から1に変化させtext-shadowをつける*/
-.glowAnime.glow span{ animation:glow_anime_on 1s ease-out forwards; }
-
-@keyframes glow_anime_on{
-  0% { opacity:0; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
-  50% { opacity:1;text-shadow: 0 0 10px #fff,0 0 15px #fff; }
-  100% { opacity:1; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
-}
-
-
-/*==ボタン　https://coco-factory.jp/ugokuweb/move02/8-17/　終了 */
-
-
 /*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-30/　開始 */
 
 
@@ -250,7 +92,7 @@ html,body{
   text-decoration: none;
   outline: none;
   /*背景の色と形状*/
-  background: linear-gradient(to right, #52A0FD 0%, #00e2fa 80%, #00e2fa 100%);
+  background: linear-gradient(to right, #fd6652 0%, #fa3200 80%, #fac000 100%);
   box-shadow: 0 15px 15px rgba(82,160,253,0.4);
   /*アニメーションの指定*/ 
   transition: all 0.3s ease-out;
@@ -261,207 +103,30 @@ html,body{
   transform: scale(0.95);
 }
 
+.gradient3 {
+    /*ボタンの形状*/
+    display: inline-block;
+    color: rgb(19, 50, 223);
+    
+    padding: 18px 60px;
+    border-radius:30px;
+    text-decoration: none;
+    outline: none;
+    /*背景の色と形状*/
+    background: linear-gradient(to right, #7afd52 0%, #d4fa00 80%, #0096fa 100%);
+    box-shadow: 0 15px 15px rgba(82,160,253,0.4);
+    /*アニメーションの指定*/ 
+    transition: all 0.3s ease-out;
+  }
+  
+  /*hoverした際のスケールで全体を縮小*/
+  .gradient2:hover{
+    transform: scale(0.95);
+  }
+
+
 /*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-30/　終了 */
 
-
-/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-41/　開始 */
-
-
-/*丸がボタンに変形する*/
-
-.btntransform{
-  /*丸の基点とするためrelativeを指定*/
-position: relative;
-  /*ボタンの形状*/  
-  display: inline-block;
-padding:0 0 0 15px;
-line-height: 50px;
-  color: #333;
-  text-decoration: none;
-  outline: none;
-}
-
-/* 丸が動く */
-.btntransform::before{
-content:'';
-  /*絶対配置で丸の位置を決める*/
-position:absolute;
-left:0;
-z-index: -1;
-  /*丸の形状*/
-width:50px;
-height:50px;
-background:rgb(107, 240, 222);
-border-radius:25px;
-  /*アニメーションの指定*/
-  transition:.3s ease-out;
-}
-
-/*hoverした際の形状*/
-.btntransform:hover::before{
-width:270px;
-}
-
-/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-41/　終了 */
-
-
-/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-29/　開始 */
-
-.gradient1{
-  /*ボタンの形状*/
-  display: inline-block;
-  color:#fff;
-  padding: 18px 60px;
-  
-  border-radius:30px;
-  text-decoration: none;
-  outline: none;
-  /*背景の色と形状*/
-  background: linear-gradient(270deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
-  background-position: 1% 50%;
-  background-size: 200% auto;
-  /*アニメーションの指定*/
-  transition: all 0.3s ease-out;
-}
-
-/*hoverした際の、背景の場所とテキスト色の変更*/
-.gradient1:hover {
-  color: #fff;
-  background-position: 99% 50%;
-}
-
-/*==ボタン　https://coco-factory.jp/ugokuweb/move01/7-1-29/　終了 */
-
-/*==　ボタン main.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  開始ライン */
-
-.gradient43{
-  /*ボタンの形状*/
-  display: inline-block;
-  padding: 18px 60px;  
-  border-radius:30px;
-  text-decoration: none;
-  border:1px solid #3c3fe7;
-  color: #3c3fe7;
-  outline: none;
-  /*アニメーションの指定*/ 
-  transition: all 0.4s ease-out;
-}
-
-/*hoverした際、グラデーションと影を付ける*/
-.gradient43:hover{
-  /*ボタンの形状*/
-  border-color:transparent;
-  color: #fff;
-  /*背景の色と形状*/
-  background: linear-gradient(270deg, #45dd91 0%, #ffe140 50%, #1fc8df 100%);
-  background-size: 200% auto;
-  background-position: right center;
-  /*ボックスの影*/   
-  box-shadow: 0 5px 10px rgb(250,108,159,0.4);
-}
-
-/*==　ボタン index.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  終了ライン */
-
-/*==　ボタン index.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  開始ライン */
-
-.gradient4{
-  /*ボタンの形状*/
-  display: inline-block;
-  padding: 18px 60px;  
-  border-radius:30px;
-  text-decoration: none;
-  border:1px solid #fa6c9f;
-  color: #fa6c9f;
-  outline: none;
-  /*アニメーションの指定*/ 
-  transition: all 0.4s ease-out;
-}
-
-/*hoverした際、グラデーションと影を付ける*/
-.gradient4:hover{
-  /*ボタンの形状*/
-  border-color:transparent;
-  color: #fff;
-  /*背景の色と形状*/
-  background: linear-gradient(270deg, #fa6c9f 0%, #ffe140 50%, #ff357f 100%);
-  background-size: 200% auto;
-  background-position: right center;
-  /*ボックスの影*/   
-  box-shadow: 0 5px 10px rgb(250,108,159,0.4);
-}
-
-/*==　ボタン index.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  終了ライン */
-
-
-/*!
- * 2021.10.25 効果背景をつけるための追加（開始）
- */
-
-#main-area p{
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding:300px 0;
-}
-
-a{
-  color: #fff;
-}
-
-/*========= 粒子を描画するエリア設定 ===============*/
-
-#wrapper{
-/*描画されるテキストを中央寄せにする*/
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#particle{
-    width:100%;
-  height: 100vh;
-  vertical-align: bottom;/*canvasタグ下に余白が生まれるのを防ぐ*/
-}
-
-/*!
- * 2021.10.25 紙吹雪（full_app.php）
- */
-
-#wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align:center;
-}
-
-a{
-  color: #333;
-}
-
-/*========= particle js を描画するエリア設定 ===============*/
-
-html,body{
-  height: 100%;/*高さを100%にして描画エリアをとる*/
-}
-
-#particles-js{ 
-  position:fixed;/*描画固定*/
-  z-index:-1;/*描画を一番下に*/
-  width: 100%;
-  height: 100%;
-  background-color:#f3f3f3;/*背景色*/
-}
-
-#wrapper{
-  position: relative;/*描画を#particles-jsよりも上にするためposition:relative;を指定*/
-  z-index: 1;/*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
-  width:100%;
-  height: 100%;
-}
-
-/*!
- * 2021.10.25 紙吹雪（full_app.php）
- */
 
 
 html {

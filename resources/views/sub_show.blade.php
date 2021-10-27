@@ -20,9 +20,6 @@
         <p class="indexTital glowAnime text-center"><?= $text ?></p>
     </div>
 
-    <div class="container">
-    </div>
-
     <div class="col-xs-12 col-lg-12 mt-5">
         <h3 class = "text-center">
             <a href="/index" class="gradient2">メッセージ集へ戻る</a>

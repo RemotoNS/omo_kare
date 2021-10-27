@@ -1,33 +1,68 @@
-@extends('layouts.app')
+@extends("layouts.app")
 
-@section("title","VIPルーム")
+@section("title","メッセージ内容")
 
-
-@section('content')
-
-  <h1>VIPルーム</h1>
-
-  <div style="position: relative; padding-bottom: 10%;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Pj0b9f_3nvM" title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+@section("content")
+  <div class="col-xs-12 col-lg-12 mt-5">
+    <h1 class="indexTital rollAnime text-center">ビデオレター</h1>
   </div>
 
-  <div style="position: relative; padding-bottom: 10%;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/OUSEtrXXvbY" title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <div class="col-md-4  img-hidden mt-5">
+    <iframe width="350" height="250"  src="https://www.youtube.com/embed/Pj0b9f_3nvM" title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="col-md-4  img-hidden mt-5">
+    <iframe width="350" height="250"  src="https://www.youtube.com/embed/Pj0b9f_3nvM" title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="col-md-4  img-hidden mt-5">
+  <iframe width="350" height="250"  src="https://www.youtube.com/embed/Pj0b9f_3nvM" title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="col-md-6  img-hidden mt-5">
+    <iframe width="500" height="350"  src="https://www.youtube.com/embed/Pj0b9f_3nvM" title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="col-md-6  img-hidden mt-5">
+  <iframe width="500" height="350"  src="https://www.youtube.com/embed/Pj0b9f_3nvM" title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="col-md-4  img-hidden mt-5">
+    <iframe width="350" height="250"  src="https://www.youtube.com/embed/Pj0b9f_3nvM" title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="col-md-4  img-hidden mt-5">
+    <iframe width="350" height="250"  src="https://www.youtube.com/embed/Pj0b9f_3nvM" title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="col-md-4  img-hidden mt-5">
+    <iframe width="350" height="250"  src="https://www.youtube.com/embed/Pj0b9f_3nvM" title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
   </div>
 
-  <div style="position: relative; padding-bottom: 10%;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/aJVRrigDJbw" title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="col-xs-12 col-lg-12 mt-5">
+  <h1 class="indexTital glowAnime text-center">コウヘイへのメッセージ</h1>
   </div>
-
-  <h2>コウヘイへのメッセージ</h2>
 
   @foreach ($gifts as $gift)
-    <h2>
-      <a href="/show/{{  $gift->id }}">{{ $gift->name }}からのメッセージ</a>
-    </h2>
+  <div class="col-xs-12 col-lg-4 mt-5">
+    <p class = "text-center">
+      <a href="/show/{{ $gift->id }}" class="gradient43">
+        {{ $gift -> name }}'s<br>Message♡
+      </a>  
+    </p>
+  </div>
   @endforeach
 
 @endsection
+
+
