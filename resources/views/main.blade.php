@@ -63,6 +63,10 @@
   </div>
   @endforeach
 
+  <div class="col-xs-12 col-lg-12 mt-5">
+    <p class = "text-center"><a href="/role" class="gradient63">秘密の裏口</a></p>
+  </div>
+
 @endsection
 
 

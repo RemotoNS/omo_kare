@@ -1,44 +1,31 @@
-@extends("layouts.app")
+@extends("layouts.full_app")
 
 @section("title","新規投稿")
 
 @section("content")
 
-<form method="post" enctype="multipart/form-data">
-@csrf
-  <input type="file" name="avatar">
-  <button type="submit">送信する</button>
-</form>
+<div class="col-xs-12 col-lg-12 mt-5">
+  <p class="indexTital glowAnime text-center">新規投稿ページ</p>
+</div>
+
+  <div class="contact-form">
+    <form action="/store" method="POST" enctype="multipart/form-data">
+    @csrf
+      <table>
+        <tr><th>お名前</th><td><input name="name" type="text" required></td></tr>
+        <tr><th>画像を投稿する（任意）</th><td><input type="file" name="img" class="form-control-file"></td></tr>
+
+        <tr><th>メッセージを投稿する</th><td><textarea name="text" placeholder="心温まるメッセージの投稿をお願いします!" required></textarea></td></tr>
+
+      </table>
+      <input class="submit-btn" type="submit" value="投稿する">
+    </form>
+  </div>
 
   <div class="col-xs-12 col-lg-12 mt-5">
-    <h1 class="indexTital glowAnime text-center">新規投稿ページ</h1>
+    <h3 class = "text-center">
+        <a href="/index" class="gradient2">メッセージ集へ戻る</a>
+    </h3>
   </div>
-    <form action="/store" method="POST" enctype="multipart/form-data">
-      @csrf
-      <label for="exampleFormControlFile1">画像を投稿する</label>
-          <input type="file" name="img" class="form-control-file">
-       
-
-      <div class="form-group">
-        <label>名前</label>
-        <input type="name" name="name" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label>メッセージを投稿する</label>
-        <textarea class="form-control" type="text" name="text" rows="3" 
-          placeholder="心温まるメッセージの投稿をお願いします" required>
-        </textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="exampleFormControlFile1">画像を投稿する</label>
-        <input type="file" name="img" class="form-control-file">
-      </div>
-
-      <button type="submit" class="btn btn-primary">投稿する</button>
-    </form>
-
-  <a class="btn btn-primary" href="/index" role="button">メッセージ集に戻る</a>
-
+    
 @endsection

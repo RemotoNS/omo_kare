@@ -42,6 +42,134 @@
   box-sizing: border-box;
 }
 
+/*========= new.php 投稿フォーム整える　開始 ===============*/
+
+.contact-form{
+  width:40%;
+  margin:0 auto;
+}
+.contact-form table{
+  width:100%;
+      margin-bottom:30px;
+}
+
+.contact-form .submit-btn{
+  width:100%;
+  margin-bottom:30px;
+  display       : inline-block;
+  font-size     : 20pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  background    : #ffffff;     /* 背景色     */
+  color         : #ff66ff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 12px 12px 8px #807f7f;  /* 影の設定 */
+  border        : 2px solid #ffffff;    /* 枠の指定 */
+}
+.contact-form .submit-btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #ffffff;     /* 背景色     */
+  background    : #ff66ff;     /* 文字色     */
+}
+
+.contact-form th{
+  text-align:left;
+  width:30%;
+}
+.contact-form td{
+  width:70%;
+}
+
+.contact-form input:not(input[type="radio"]), .contact-form textarea{
+	width:100%;
+}
+.contact-form input:not(input[type="radio"]){
+	height:35px;
+}
+.contact-form textarea{
+	height:200px;
+}
+.contact-form label{
+    display:block;
+}
+
+.contact-form th{
+  padding:20px 0;
+}
+
+/*========= new.php 投稿フォーム整える　終了 ===============*/
+
+
+
+/*========= new.php ボタンが回る仕掛け（投稿する）　開始 ===============*/
+
+/*== ボタン共通設定 */
+.btn02 {
+  /*背景の基点とするためrelativeを指定*/
+  position: relative;
+  /*ボタンの形状*/
+  display: inline-block;
+  width:100%;
+  max-width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  outline: none;
+}
+
+/*ボタン内側の設定*/
+.btn02 span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #333;
+  /* 重なりを3Dで表示 */
+  transform-style: preserve-3d;
+  /* アニメーションの設定 数字が少なくなるほど早く回転 */
+  transition: 0.5s;
+}
+
+/*== くるっと回転（奥に） */
+
+/* 回転前 */
+.rotateback span:nth-child(1) {
+  background: rgb(225, 159, 228);
+  color: #000;
+  transform: rotateX(0deg);/*はじめは回転なし*/
+  transform-origin: 0 50%  -25px;/* 回転する起点 */
+}
+
+/*hoverをした後の形状*/
+.rotateback:hover span:nth-child(1) {
+  transform: rotateX(90deg);/* X軸に90度回転 */
+}
+
+/* 回転後 */
+.rotateback span:nth-child(2) {
+  background: rgb(175, 238, 183);
+  color: #fff;
+  transform: rotateX(-90deg);/*はじめはX軸に-90度回転*/
+  transform-origin: 0 50%  -25px;/* 回転する起点 */
+}
+
+/*hoverをした後の形状*/
+.rotateback:hover span:nth-child(2) {
+  transform: rotateX(0deg);/* X軸に0度回転 */
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+
+p{
+  margin: 0 0 10px 0;
+}
+
+/*========= new.php ボタンが回る仕掛け（投稿する）　終了 ===============*/
+
+
 /*========= 幾何学模様背景　開始 ===============*/
 
 #wrapper1{
@@ -334,6 +462,36 @@ width:270px;
 
 /*==　ボタン main.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  開始ライン */
 
+.gradient63{
+  /*ボタンの形状*/
+  display: inline-block;
+  padding: 18px 60px;  
+  border-radius:30px;
+  text-decoration: none;
+  border:1px solid #ffffff;
+  color: #efeff8;
+  outline: none;
+  /*アニメーションの指定*/ 
+  transition: all 0.4s ease-out;
+}
+
+/*hoverした際、グラデーションと影を付ける*/
+.gradient63:hover{
+  /*ボタンの形状*/
+  border-color:transparent;
+  color: #fff;
+  /*背景の色と形状*/
+  background: linear-gradient(270deg, #ee3e64 0%, #73a196 50%, #1fc8df 100%);
+  background-size: 200% auto;
+  background-position: right center;
+  /*ボックスの影*/   
+  box-shadow: 0 5px 10px rgb(250,108,159,0.4);
+}
+
+/*==　ボタン main.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  終了ライン */
+
+/*==　ボタン main.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  開始ライン */
+
 .gradient43{
   /*ボタンの形状*/
   display: inline-block;
@@ -360,7 +518,7 @@ width:270px;
   box-shadow: 0 5px 10px rgb(250,108,159,0.4);
 }
 
-/*==　ボタン index.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  終了ライン */
+/*==　ボタン main.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  終了ライン */
 
 /*==　ボタン index.php　https://coco-factory.jp/ugokuweb/move01/7-1-32/  開始ライン */
 

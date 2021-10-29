@@ -23,9 +23,10 @@ Route::post('/store', "App\Http\Controllers\GiftController@store") ;
 Route::get('/show_sub/{id}', "App\Http\Controllers\GiftController@show_sub") ;
 Route::get('/index', "App\Http\Controllers\GiftController@index") ;
 
-//test
-Route::get('/testJs', "App\Http\Controllers\GiftController@testJs") ;
-
+//ログイン・ログアウト専用ページ
+Route::get('/role', function () {
+    return view('role');
+});
 
 
 
